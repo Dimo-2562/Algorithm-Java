@@ -6,24 +6,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int test = sc.nextInt();
+        int num = 0;
+        int max = -999;
 
-        for(int i = 0; i < test; i++){
-            int n = sc.nextInt();
-            int[] binary = new int[10000];
+        for (int i = 0; i < 10; i++) {
+            int minus = sc.nextInt();
+            int plus = sc.nextInt();
 
-            int k = 0;
+            num += (plus - minus);
+            if (max < num)
+                max = num;
 
-            while(n != 0){
-                binary[k++] = n % 2;
-                n = n / 2;
-            }
-
-            for(int j = 0; j <= k; j++){
-                if(binary[j] == 1)
-                    System.out.print(j + " ");
-            }
-            System.out.println();
         }
+
+        System.out.println(max);
     }
 }
