@@ -7,34 +7,18 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        int[] hobit = new int[9];
-        int sum = 0;
-        boolean flag = false;
+        int t;
+        t = sc.nextInt();
 
-        for (int i = 0; i < 9; i++) {
-            hobit[i] = sc.nextInt();
-        }
-        for (int i = 0; i < hobit.length; i++) {
-            sum += hobit[i];
-        }
-
-        for (int i = 0; i < 9; i++) {
-            if (flag == true)
-                break;
-            for (int j = i + 1; j < 9; j++) {
-                if ((sum - hobit[i] - hobit[j]) == 100) {
-                    hobit[i] = 999;
-                    hobit[j] = 999;
-                    flag = true;
-                    break;
-                }
+        for (int i = 0; i < t; i++) {
+            int[] num = new int[10];
+            for (int j = 0; j < 10; j++) {
+                num[j] = sc.nextInt();
             }
-        }
 
-        Arrays.sort(hobit);
-        for (int i = 0; i < 7; i++) {
-            System.out.println(hobit[i]);
-        }
+            Arrays.sort(num);
 
+            System.out.println(num[7]);
+        }
     }
 }
