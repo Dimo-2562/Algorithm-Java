@@ -1,45 +1,26 @@
 package org.example;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException{
+        
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        
+        int n = Integer.parseInt(br.readLine());
 
-        boolean[] isPrime = new boolean[10001];
-        for(int i = 0; i <= 10000; i++)
-            isPrime[i] = true;
-        isPrime[0] = isPrime[1] = false;
-
-        for (int i = 2; i <= 100; i++) {
-            if (isPrime[i])
-                for (int j = i * i; j <= 10000; j += i)
-                    isPrime[j] = false;
+        List<Integer> weightLimits = new ArrayList<>();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < n; i++){
+            
         }
 
-        int a, b;
-        a = sc.nextInt();
-        b = sc.nextInt();
+        bw.write("asd");
+        bw.flush();
 
-        int sum = 0;
-        int min = 0;
-        boolean flag = true;
-
-        for(int i = a; i <= b; i++){
-            if(isPrime[i]){
-                sum += i;
-                if(flag){
-                    min = i;
-                    flag = false;
-                }
-            }
-        }
-
-        if(flag)
-            System.out.println("-1");
-        else{
-            System.out.println(sum);
-            System.out.println(min);
-        }
+        br.close();
+        bw.close();
     }
 }
